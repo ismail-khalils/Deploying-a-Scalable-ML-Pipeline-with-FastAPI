@@ -1,31 +1,40 @@
-Link: https://github.com/ismail-khalils/Deploying-a-Scalable-ML-Pipeline-with-FastAPI
+# Deploying a Scalable ML Pipeline with FastAPI
 
-Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
+This repository contains code for deploying a scalable machine learning pipeline using FastAPI.
 
-# Environment Set up (pip or conda)
-* Option 1: use the supplied file `environment.yml` to create a new environment with conda
-* Option 2: use the supplied file `requirements.txt` to create a new environment with pip
-    
-## Repositories
-* Create a directory for the project and initialize git.
-    * As you work on the code, continually commit changes. Trained models you want to use in production must be committed to GitHub.
-* Connect your local git repo to GitHub.
-* Setup GitHub Actions on your repo. You can use one of the pre-made GitHub Actions if at a minimum it runs pytest and flake8 on push and requires both to pass without error.
-    * Make sure you set up the GitHub Action to have the same version of Python as you used in development.
+## Environment Setup
 
-# Data
-* Download census.csv and commit it to dvc.
-* This data is messy, try to open it in pandas and see what you get.
-* To clean it, use your favorite text editor to remove all spaces.
+You can set up the environment using either pip or conda:
 
-# Model
-* Using the starter code, write a machine learning model that trains on the clean data and saves the model. Complete any function that has been started.
-* Write unit tests for at least 3 functions in the model code.
-* Write a function that outputs the performance of the model on slices of the data.
-    * Suggestion: for simplicity, the function can just output the performance on slices of just the categorical features.
-* Write a model card using the provided template.
+- **Option 1**: Use the supplied file `environment.yml` to create a new environment with conda.
+- **Option 2**: Use the supplied file `requirements.txt` to create a new environment with pip.
 
-# API Creation
-*  Create a RESTful API using FastAPI this must implement:
-    * GET on the root giving a welcome message.
-    * POST that does model inference.
+## Repository Structure
+
+The repository contains the following directories and files:
+
+- `.github/workflows`: Contains GitHub workflows.
+- `data`: Contains the data used for training the model.
+- `ml`: Contains the machine learning code.
+- `model`: Contains the trained model.
+- `screenshots`: Contains screenshots related to the project.
+- `CODEOWNERS`: File to specify the code owners.
+- `LICENSE.txt`: License file.
+- `README.md`: This file.
+- `environment.yml`: Conda environment file.
+- `local_api.py`: Local API file.
+- `main.py`: Main Python file.
+- `model_card_template.md`: Model card template.
+- `requirements.txt`: Requirements file.
+- `test_ml.py`: File for testing the machine learning code.
+- `train_model.py`: File for training the model.
+
+## Usage
+
+To use this repository, follow these steps:
+
+1. Clone the repository.
+2. Set up the environment as described above.
+3. Train the model using the `train_model.py` script.
+4. Test the model using the `test_ml.py` script.
+5. Start the FastAPI server using the `main.py` script.
